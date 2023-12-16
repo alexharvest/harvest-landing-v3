@@ -1,0 +1,283 @@
+@font-face {
+    font-family: "Inter-fallback";
+    size-adjust: 105%;
+    letter-spacing: 10px;
+    descent-override: 24%;
+    ascent-override: 84%;
+    src: local("Arial");
+}
+
+/* :root {
+
+} */
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Inter-fallback';
+    font-family: 'Inter', 'Inter-fallback';
+    -webkit-tap-highlight-color: transparent;
+    font-size: 14px;
+    color: white;
+    z-index: 100;
+}
+
+html, body{
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+a, button{
+    font-family: 'Inter', Inter-fallback;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+    border: none;
+}
+
+.alignY{
+    display: flex;
+    align-items: center;
+}
+
+.alignX{
+    display: flex;
+    justify-content: center;
+}
+
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../public/bg-thumbnail.png"), url("../public/bg-thumbnail-1.webp"), url("../public/bg-thumbnail-0.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+}
+
+main{
+    flex: 1;
+}
+
+section{
+    width: 100%;
+    margin-top: 60px;
+}
+
+.container{
+    width: 100%;
+    max-width: 1350px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+
+#navbar{
+    width: 100%;
+    padding: 20px 10px;
+    border-bottom: 1px solid #F2F4F7;
+}
+
+.navContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    gap: 15px;
+    font-weight: 700;
+    font-size: 27px;
+    gap: 12.7px;
+}
+
+.logo img{
+    width: 45px;
+    height: 45px;
+}
+
+.miniLogo {
+    font-size: 14px;
+    gap: 8px;
+}
+
+.miniLogo img{
+    width: 25px;
+    height: 25px;
+}
+
+.navLinks{
+    gap: 30px;
+}
+
+.navLink{
+    font-weight: 600;
+}
+
+.navLink:hover{
+    filter: brightness(0) saturate(100%) invert(92%) sepia(0%) saturate(7499%) hue-rotate(216deg) brightness(93%) contrast(88%);
+}
+
+main{
+    display: flex;
+    align-items: center;
+}
+
+.mainGrid{
+    display: grid;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.mainGrid h1{
+    text-align: center;
+    font-size: 29px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.mainGrid h2{
+    text-align: center;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+.openApp{
+    flex-direction: column;
+    margin-top: 25px;
+    gap: 15px;
+}
+
+.openApp img{
+    width: 108px;
+    height: 36px;
+}
+
+.openAppButton{
+    display: table;
+    padding: 15px 26px;
+    color: black;
+    font-weight: 600;
+    font-size: 1.2rem;
+    background-color: white;
+    border-radius: 10px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.openAppButton:hover{
+    background-color: #CECECE;
+}
+
+.animationContent{
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.animationContainer{
+    position: relative;
+    padding-bottom: 100%;
+}
+
+#animation{
+    position: absolute;
+    inset: 0;
+}
+
+#footer{
+    padding: 25px 0;
+}
+
+.footerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footerLinks{
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+@media(max-width: 767px){
+    .hideMobile{
+        display: none!important;
+    }
+}
+
+@media (min-width: 768px){
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #E0E0E0;
+        border-radius: 8px;
+    }
+    .showMobile{
+        display: none;
+    }
+    section{
+        margin-top: 75px;
+    }
+    .logo img{
+        width: 59px;
+        height: 59px;
+    }
+    #navbar{
+        padding: 28px 0;
+    }
+    .navLinks{
+        gap: 35px;
+    }
+    .mainGrid{
+        grid-template-columns: 0.65fr 0.35fr;
+        gap: 30px;
+        align-items: center;
+        margin-top: 0;
+    }
+    .mainGrid h1{
+        text-align: left;
+        font-size: 45px;
+    }
+    .mainGrid h2{
+        text-align: left;
+        font-size: 30px;
+    }
+    .openApp{
+        flex-direction: row;
+        margin-top: 40px;
+        gap: 50px;
+    }
+    .openAppButton{
+        padding: 20px 35px;
+    }
+    .openApp img{
+        width: 178px;
+        height: 59px;
+    }
+    #footer{
+        padding: 40px 0;
+        border-top: 1px solid #F2F4F7;
+        margin-top: 40px;
+    }
+}
+
+@media (min-width: 992px){
+    html{
+        font-size: 16px;
+    }
+    .mainGrid h1{
+        font-size: 60px;
+    }
+    .mainGrid h2{
+        font-size: 35px;
+    }
+}
