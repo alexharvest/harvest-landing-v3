@@ -22,6 +22,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
     </head>
     <body>
         <div class="mainContainer">
@@ -73,10 +74,15 @@
                                 <a class="openAppButton" href="https://app.harvest.finance/">
                                     Open App
                                 </a>
-                                <a class="playVideoButton" href="#">
+                                <a class="playVideoButton" href="#" id="playVideo">
                                     <img src="./public/play-circle.svg"/>
                                     Play Video
                                 </a>
+                            </div>
+                        </div>
+                        <div id="videoModal" class="video-modal">
+                            <div class="video-container" id="videoContainer">
+                                <div id="videoWrapper"></div>
                             </div>
                         </div>
                         <p>Experience the app by viewing our&nbsp;
@@ -134,4 +140,49 @@
             </footer>
         </div>
     </body>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const playButton = document.getElementById("playVideo");
+            const modal = document.getElementById("videoModal");
+            const videoContainer = document.getElementById("videoContainer");
+            const videoWrapper = document.getElementById("videoWrapper");
+
+            let player = null;
+
+            playButton.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                // Check if video is already loaded to prevent duplication
+                if (!player) {
+                    videoWrapper.innerHTML = `
+                        <video id="player" playsinline controls>
+                            <source src="./public/video.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    `;
+                    player = new Plyr("#player");
+                }
+
+                // Show modal
+                modal.style.visibility = "visible";
+                modal.style.opacity = "1";
+                videoContainer.style.display = "block";
+
+                player.play();
+            });
+
+            // Close when clicking outside the video
+            modal.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    modal.style.visibility = "hidden";
+                    modal.style.opacity = "0";
+                    videoContainer.style.display = "none";
+                    if (player) {
+                        player.pause();
+                    }
+                }
+            });
+        });
+    </script>
 </html>

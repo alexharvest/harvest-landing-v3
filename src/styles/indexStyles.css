@@ -227,6 +227,30 @@ main{
     background: linear-gradient(90deg, rgb(251 199 138 / 10%) 0%, rgb(132 157 249 / 10%) 48.9%, rgb(95 225 121 / 10%) 100%);
 }
 
+.video-modal {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.video-container {
+    position: relative;
+    width: 80%;
+    max-width: 700px;
+    background: #a4e794;
+    padding: 7px;
+    border-radius: 10px;
+    display: none;
+}
+
 .animationContent{
     width: 100%;
     max-width: 400px;
