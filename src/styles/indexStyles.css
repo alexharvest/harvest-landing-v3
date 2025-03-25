@@ -424,6 +424,10 @@ main {
     height: 16px;
   }
 
+  .mobile-menu {
+    cursor: pointer;
+  }
+
   .mobile-menubar {
     flex-direction: column;
     position: absolute;
