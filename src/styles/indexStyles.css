@@ -457,6 +457,11 @@ main {
     width: 200px;
   }
 
+  .mobile-menubar .navLinks a:hover {
+    background: #2f333a;
+    filter: none;
+  }
+
   .openAppWrapper {
     margin: auto;
     display: flex;
